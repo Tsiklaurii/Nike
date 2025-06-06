@@ -1,0 +1,111 @@
+.menu.scrolled {
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    top: 0;
+}
+
+.menu.scrolled a {
+    color: white;
+}
+
+.menu.scrolled .nike-logo {
+    display: none;
+}
+
+.menu.scrolled .white-nike-logo {
+    display: block;
+}
+
+.white-nike-logo {
+    width: 70px;
+    height: 50px;
+    display: none;
+}
+
+.sign-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5;
+    height: 36px;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.jordan-logo {
+    width: 19.2px;
+    height: 17.97px;
+}
+
+.sign-in-menu a {
+    text-decoration: none;
+    color: black;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0%;
+}
+
+.menu {
+    display: flex;
+    padding: 0px 30px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nike-logo-container {
+    width: 340px;
+}
+
+.menu-choices {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nike-logo {
+    width: 58.85px;
+    height: 20.54px;
+}
+
+menu a {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    text-decoration: none;
+}
+
+.heart-cart {
+    display: flex;
+    width: 75px;
+    justify-content: space-between;
+}
+
+.search {
+    border: none;
+    background-color: #F5F5F5;
+    border-radius: 100px;
+    width: 180px;
+    height: 40px;
+    padding: 8px 8px 8px 36px;
+    box-sizing: border-box;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+    padding-left: 130px;
+}
+
+.search-container img {
+    position: absolute;
+    top: 50%;
+    left: 140px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+}
