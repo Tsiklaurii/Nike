@@ -30,7 +30,7 @@
     background-color: #F5F5F5;
     height: 36px;
     width: 100%;
-    padding: 0px 30px;
+    padding: 0px 35px;
 }
 
 .jordan-logo {
@@ -49,10 +49,11 @@
 
 .menu {
     display: flex;
-    padding: 0px 30px;
+    padding: 0px 35px;
     height: 60px;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
 .nike-logo-container {
@@ -94,6 +95,10 @@ menu a {
     box-sizing: border-box;
 }
 
+.search:focus {
+    outline: none;
+}
+
 .search-container {
     position: relative;
     width: 300px;
@@ -108,4 +113,189 @@ menu a {
     width: 16px;
     height: 16px;
     pointer-events: none;
+}
+
+.cover {
+    padding: 0px 35px;
+    margin-bottom: 19px;
+}
+
+.cover img {
+    width: 100%;
+}
+
+.cover-info {
+    text-align: center;
+    padding: 50px;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueBold';
+    src: url('fonts/HelveticaNeueBold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue-Medium';
+    src: url('fonts/HelveticaNeue-Medium.otf') format('truetype');
+}
+
+.cover-info h1 {
+    font-family: 'HelveticaNeueBold';
+    font-size: 54px;
+    line-height: 60px;
+    font-weight: 600;
+    color: black;
+}
+
+.cover-info p {
+    font-family: 'HelveticaNeue-Medium';
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 24px 0px 30px 0px;
+    color: black;
+}
+
+.cover-info button {
+    background-color: black;
+    border-radius: 30px;
+    padding: 7.5px 23.92px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-header {
+    width: 100%;
+    padding: 0px 35px;
+    display: flex;
+    height: 51px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0px 15px 0px;
+}
+
+.hide-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'HelveticaNeue-Medium';
+    font-size: 16px;
+    font-weight: bold;
+    width: 224px;
+    color: black;
+}
+
+.hide-filters p {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-header h3 {
+    font-family: 'HelveticaNeueBold';
+    font-size: 24px;
+}
+
+.filters-products {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 0px 35px;
+}
+
+.filters {
+    width: 20%;
+    border: 1px solid black;
+}
+
+.products {
+    width: 75%;
+    border: 1px solid black;
+}
+
+.card {
+    border: none;
+    cursor: pointer;
+}
+
+.pagination {
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.page-link {
+    color: black;
+}
+
+.page-link:hover {
+    background-color: rgb(223, 223, 223);
+    color: black;
+}
+
+.page-link:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.active .page-link {
+    background-color: black;
+    border-color: black;
+}
+
+.active .page-link:hover {
+    color: white;
+}
+
+.card-body {
+    padding: 20px 0px;
+}
+
+.card-title,
+.card-shortdescription,
+.card-category,
+.card-price {
+    font-family: 'HelveticaNeue-Medium';
+    color: black;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.card-category {
+    color: rgb(139, 139, 139);
+}
+
+.details-card {
+    padding: 0px 130px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 92px;
+}
+
+.details-card img {
+    width: 666px;
+    height: 562px;
+    object-fit: contain;
+}
+
+.details-container {
+    margin-top: 50px;
+}
+
+.details-card-title,
+.details-card-shortdescription,
+.details-card-category,
+.details-card-price {
+    font-family: 'HelveticaNeue-Medium';
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.details-card-title {
+    font-size: 25px;
+}
+
+.details-card-category {
+    color: rgb(139, 139, 139);
 }
