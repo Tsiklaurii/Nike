@@ -299,3 +299,69 @@ menu a {
 .details-card-category {
     color: rgb(139, 139, 139);
 }
+
+footer {
+    height: 331px;
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 92px;
+    padding: 0px 35px;
+}
+
+.footer-info {
+    margin-bottom: 16px;
+    height: 213px;
+    display: flex;
+}
+
+.footer-footer {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+.location,
+.guides {
+    width: 50%;
+    color: #7E7E7E;
+    font-family: 'HelveticaNeue-Medium';
+}
+
+.guides {
+    text-align: right;
+}
+
+.footer-menu,
+.soc-networks {
+    width: 50%;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'HelveticaNeue-Medium';
+    color: #7E7E7E;
+}
+
+.footer-menu p {
+    margin-bottom: 17px;
+}
+
+.footer-menu>div:first-child {
+    color: #FFFFFF;
+}
+
+.footer-menu>div:nth-child(2)>p:first-child,
+.footer-menu>div:nth-child(3)>p:first-child {
+    color: #FFFFFF;
+}
+
+.soc-networks {
+    text-align: right;
+}
+
+.soc-networks img {
+    cursor: pointer;
+}
