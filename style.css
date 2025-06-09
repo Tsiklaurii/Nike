@@ -30,7 +30,7 @@
     background-color: #F5F5F5;
     height: 36px;
     width: 100%;
-    padding: 0px 35px;
+    padding: 0px 40px;
 }
 
 .jordan-logo {
@@ -49,11 +49,11 @@
 
 .menu {
     display: flex;
-    padding: 0px 35px;
+    padding: 0px 40px;
     height: 60px;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 4;
 }
 
 .nike-logo-container {
@@ -116,7 +116,7 @@ menu a {
 }
 
 .cover {
-    padding: 0px 35px;
+    padding: 0px 40px;
     margin-bottom: 19px;
 }
 
@@ -167,7 +167,7 @@ menu a {
 
 .filter-header {
     width: 100%;
-    padding: 0px 35px;
+    padding: 0px 40px;
     display: flex;
     height: 51px;
     justify-content: space-between;
@@ -200,18 +200,32 @@ menu a {
 .filters-products {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
-    padding: 0px 35px;
+    padding: 0px 40px;
 }
 
 .filters {
     width: 20%;
-    border: 1px solid black;
+    padding: 4px;
+    font-family: 'HelveticaNeueBold';
+}
+
+.filters p {
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+
+.filters-checkboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters-checkboxes input {
+    margin-bottom: 14px;
+    cursor: pointer;
 }
 
 .products {
     width: 75%;
-    border: 1px solid black;
 }
 
 .card {
@@ -239,8 +253,8 @@ menu a {
 }
 
 .active .page-link {
-    background-color: black;
-    border-color: black;
+    background-color: rgb(20, 20, 20);
+    border-color: rgb(20, 20, 20);
 }
 
 .active .page-link:hover {
@@ -306,8 +320,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-top: 92px;
-    padding: 0px 35px;
+    padding: 0px 40px;
 }
 
 .footer-info {
@@ -364,4 +377,58 @@ footer {
 
 .soc-networks img {
     cursor: pointer;
+}
+
+.flight-essentials {
+    width: 100%;
+    margin-top: 130px;
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.flight-essentials h1 {
+    font-family: 'HelveticaNeueBold';
+    color: black;
+    font-size: 52px;
+}
+
+.flight-essentials p {
+    font-family: Helvetica;
+    color: black;
+    font-size: 15px;
+    margin: 24px 0px 30px 0px;
+}
+
+.shop {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 7.5px 21.88px 7.5px 21.5px;
+    width: 80px;
+    height: 39px;
+    font-family: Helvetica;
+}
+
+.flight-essentials-options {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flight-essentials-options img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.flight-essentials-options div {
+    width: 32.5%;
 }

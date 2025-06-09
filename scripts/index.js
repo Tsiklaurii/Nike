@@ -40,8 +40,8 @@ function renderProducts(page) {
 
         // details გვერდზე გადასვლა პროდუქტის card-ზე კლიკის დროს
         card.addEventListener("click", () => {
-            localStorage.setItem("selectedProductId", product.id); 
-            window.location.href = "details.html";               
+            localStorage.setItem("selectedProductId", product.id);
+            window.location.href = "details.html";
         });
     })
 }
@@ -51,6 +51,29 @@ function renderPagination() {
     paginationContainer.innerHTML = '';
     const totalPage = Math.ceil(allProducts.length / productPerPage);
 
+    // Prev button
+    const prevItem = document.createElement("li");
+    prevItem.classList.add("page-item");
+    if (currentPage === 1) prevItem.classList.add("disabled");
+
+    const prevLink = document.createElement("a");
+    prevLink.classList.add("page-link");
+    prevLink.href = "#";
+    prevLink.textContent = "Prev";
+
+    prevLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            renderProducts(currentPage);
+            renderPagination();
+        }
+    });
+
+    prevItem.appendChild(prevLink);
+    paginationContainer.appendChild(prevItem);
+
+    // Page numbers
     for (let i = 1; i <= totalPage; i++) {
         const listItem = document.createElement("li");
         listItem.classList.add("page-item");
@@ -67,15 +90,35 @@ function renderPagination() {
             e.preventDefault();
             currentPage = i;
             renderProducts(currentPage);
-            const activeItem = paginationContainer.querySelector(".page-item.active");
-            if (activeItem) {
-                activeItem.classList.remove("active");
-            }
-            listItem.classList.add("active");
-        })
+            renderPagination(); // update pagination
+        });
+
         listItem.appendChild(link);
         paginationContainer.appendChild(listItem);
     }
+
+    // Next button
+    const nextItem = document.createElement("li");
+    nextItem.classList.add("page-item");
+    if (currentPage === totalPage) nextItem.classList.add("disabled");
+
+    const nextLink = document.createElement("a");
+    nextLink.classList.add("page-link");
+    nextLink.href = "#";
+    nextLink.textContent = "Next";
+
+    nextLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage < totalPage) {
+            currentPage++;
+            renderProducts(currentPage);
+            renderPagination();
+        }
+    });
+
+    nextItem.appendChild(nextLink);
+    paginationContainer.appendChild(nextItem);
 }
+
 
 fetchProducts();
