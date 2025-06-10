@@ -1,3 +1,15 @@
+// ჰედერი სქროლის დროს
+window.addEventListener('scroll', function () {
+    const menuDiv = document.querySelector('.menu');
+
+    if (window.scrollY > 80) {
+        menuDiv.classList.add('scrolled');
+    } else {
+        menuDiv.classList.remove('scrolled');
+    }
+});
+
+
 // პროდუქტის დეტალების ჩვენება
 document.addEventListener("DOMContentLoaded", () => {
     const productId = localStorage.getItem("selectedProductId");

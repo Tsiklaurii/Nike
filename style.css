@@ -30,7 +30,7 @@
     background-color: #F5F5F5;
     height: 36px;
     width: 100%;
-    padding: 0px 40px;
+    padding: 0px 50px;
 }
 
 .jordan-logo {
@@ -49,7 +49,7 @@
 
 .menu {
     display: flex;
-    padding: 0px 40px;
+    padding: 0px 50px;
     height: 60px;
     justify-content: space-between;
     align-items: center;
@@ -116,7 +116,7 @@ menu a {
 }
 
 .cover {
-    padding: 0px 40px;
+    padding: 0px 50px;
     margin-bottom: 19px;
 }
 
@@ -159,15 +159,16 @@ menu a {
 .cover-info button {
     background-color: black;
     border-radius: 30px;
-    padding: 7.5px 23.92px;
+    padding: 15px 24px;
     border: none;
     color: white;
     cursor: pointer;
+    font-family: 'HelveticaNeue-Medium';
 }
 
 .filter-header {
     width: 100%;
-    padding: 0px 40px;
+    padding: 0px 50px;
     display: flex;
     height: 51px;
     justify-content: space-between;
@@ -200,7 +201,7 @@ menu a {
 .filters-products {
     display: flex;
     justify-content: space-between;
-    padding: 0px 40px;
+    padding: 0px 50px;
 }
 
 .filters {
@@ -224,6 +225,10 @@ menu a {
     cursor: pointer;
 }
 
+.filters-checkboxes label {
+    font-family: Helvetica;
+}
+
 .products {
     width: 75%;
 }
@@ -236,6 +241,11 @@ menu a {
 .pagination {
     justify-content: center;
     margin-top: 50px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    font-family: 'HelveticaNeueBold';
 }
 
 .page-link {
@@ -320,7 +330,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0px 40px;
+    padding: 0px 50px;
 }
 
 .footer-info {
@@ -382,7 +392,7 @@ footer {
 .flight-essentials {
     width: 100%;
     margin-top: 130px;
-    padding: 0px 40px;
+    padding: 0px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -427,6 +437,7 @@ footer {
     height: 100%;
     object-fit: contain;
     display: block;
+    cursor: pointer;
 }
 
 .flight-essentials-options div {

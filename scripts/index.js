@@ -1,3 +1,14 @@
+// ჰედერი სქროლის დროს
+window.addEventListener('scroll', function () {
+    const menuDiv = document.querySelector('.menu');
+
+    if (window.scrollY > 80) {
+        menuDiv.classList.add('scrolled');
+    } else {
+        menuDiv.classList.remove('scrolled');
+    }
+});
+
 const productsContainer = document.getElementById("product-container");
 const paginationContainer = document.getElementById("pagination");
 const productPerPage = 6;
@@ -17,12 +28,37 @@ async function fetchProducts() {
     }
 }
 
-// მიღებული მონაცემების დამუშავება (ეკრანზე გამოტანა)
+// სერჩი
+const searchInput = document.getElementById('search');
+let filteredProducts = [];  // სერჩის შედეგები
+
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (query === "") {
+        filteredProducts = allProducts.slice();
+    } else {
+        filteredProducts = allProducts.filter(product =>
+            product.Title.toLowerCase().includes(query)
+        );
+    }
+
+    currentPage = 1;
+    renderProducts(currentPage);
+    renderPagination();
+});
+
+
+// პროდუქტის ეკრანზე გამოტანა
 function renderProducts(page) {
     productsContainer.innerHTML = "";
+
+    const dataToShow = (filteredProducts.length > 0 || searchInput.value.trim() !== "") ? filteredProducts : allProducts;
+
     const startIndex = (page - 1) * productPerPage;
     const endIndex = startIndex + productPerPage;
-    const currentProducts = allProducts.slice(startIndex, endIndex);
+    const currentProducts = dataToShow.slice(startIndex, endIndex);
+
     currentProducts.forEach(product => {
         const card = document.createElement("div");
         card.classList.add("col-md-4", "mb-4");
@@ -35,45 +71,23 @@ function renderProducts(page) {
                 <p class="card-shortdescription">${product.shortdescription}</p>
                 <p class="card-price">$ ${product.price}</p>
             </div>
-        </div>`
+        </div>`;
         productsContainer.appendChild(card);
 
-        // details გვერდზე გადასვლა პროდუქტის card-ზე კლიკის დროს
         card.addEventListener("click", () => {
             localStorage.setItem("selectedProductId", product.id);
             window.location.href = "details.html";
         });
-    })
+    });
 }
 
-
+// პაგინაცია
 function renderPagination() {
     paginationContainer.innerHTML = '';
-    const totalPage = Math.ceil(allProducts.length / productPerPage);
 
-    // Prev button
-    const prevItem = document.createElement("li");
-    prevItem.classList.add("page-item");
-    if (currentPage === 1) prevItem.classList.add("disabled");
+    const dataToPaginate = (filteredProducts.length > 0 || searchInput.value.trim() !== "") ? filteredProducts : allProducts;
+    const totalPage = Math.ceil(dataToPaginate.length / productPerPage);
 
-    const prevLink = document.createElement("a");
-    prevLink.classList.add("page-link");
-    prevLink.href = "#";
-    prevLink.textContent = "Prev";
-
-    prevLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (currentPage > 1) {
-            currentPage--;
-            renderProducts(currentPage);
-            renderPagination();
-        }
-    });
-
-    prevItem.appendChild(prevLink);
-    paginationContainer.appendChild(prevItem);
-
-    // Page numbers
     for (let i = 1; i <= totalPage; i++) {
         const listItem = document.createElement("li");
         listItem.classList.add("page-item");
@@ -90,35 +104,15 @@ function renderPagination() {
             e.preventDefault();
             currentPage = i;
             renderProducts(currentPage);
-            renderPagination(); // update pagination
-        });
-
+            const activeItem = paginationContainer.querySelector(".page-item.active");
+            if (activeItem) {
+                activeItem.classList.remove("active");
+            }
+            listItem.classList.add("active");
+        })
         listItem.appendChild(link);
         paginationContainer.appendChild(listItem);
     }
-
-    // Next button
-    const nextItem = document.createElement("li");
-    nextItem.classList.add("page-item");
-    if (currentPage === totalPage) nextItem.classList.add("disabled");
-
-    const nextLink = document.createElement("a");
-    nextLink.classList.add("page-link");
-    nextLink.href = "#";
-    nextLink.textContent = "Next";
-
-    nextLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (currentPage < totalPage) {
-            currentPage++;
-            renderProducts(currentPage);
-            renderPagination();
-        }
-    });
-
-    nextItem.appendChild(nextLink);
-    paginationContainer.appendChild(nextItem);
 }
-
 
 fetchProducts();
