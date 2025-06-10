@@ -131,12 +131,12 @@ menu a {
 
 @font-face {
     font-family: 'HelveticaNeueBold';
-    src: url('fonts/HelveticaNeueBold.otf') format('truetype');
+    src: url('../fonts/HelveticaNeueBold.otf') format('truetype');
 }
 
 @font-face {
     font-family: 'HelveticaNeue-Medium';
-    src: url('fonts/HelveticaNeue-Medium.otf') format('truetype');
+    src: url('../fonts/HelveticaNeue-Medium.otf') format('truetype');
 }
 
 .cover-info h1 {
